@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Benedikt Eickhoff personal pointer</title>
+  <desc id="desc">A personal pointer with a memory vector for continuity and a Teatro score for movement.</desc>
+  <rect width="1200" height="630" fill="#f4f7f8"/>
+  <rect x="28" y="28" width="1144" height="574" rx="24" fill="#fff" stroke="#cbd5dc" stroke-width="2"/>
+  <path d="M88 126h170" stroke="#176b9f" stroke-width="5"/>
+  <text x="88" y="108" fill="#61717e" font-family="Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="5">BENEDIKT EICKHOFF · PERSONAL POINTER</text>
+  <text x="88" y="210" fill="#1e2b3a" font-family="Arial, sans-serif" font-size="62" font-weight="700">A place to point</text>
+  <text x="88" y="278" fill="#1e2b3a" font-family="Arial, sans-serif" font-size="62" font-weight="700">to what matters.</text>
+  <text x="88" y="338" fill="#61717e" font-family="Arial, sans-serif" font-size="25">Memory vector · Teatro score · selected public posts</text>
+  <rect x="88" y="408" width="296" height="106" rx="14" fill="#dcecf4"/>
+  <text x="116" y="449" fill="#176b9f" font-family="Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="3">01 · CONTINUITY</text>
+  <text x="116" y="483" fill="#1e2b3a" font-family="Arial, sans-serif" font-size="25" font-weight="700">Memory vector</text>
+  <rect x="414" y="408" width="296" height="106" rx="14" fill="#f2e5d8"/>
+  <text x="442" y="449" fill="#bd6f2a" font-family="Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="3">02 · MOVEMENT</text>
+  <text x="442" y="483" fill="#1e2b3a" font-family="Arial, sans-serif" font-size="25" font-weight="700">Teatro score</text>
+  <circle cx="969" cy="320" r="128" fill="#dcecf4" stroke="#176b9f" stroke-width="2"/>
+  <circle cx="969" cy="320" r="75" fill="none" stroke="#176b9f" stroke-width="2" stroke-dasharray="6 8"/>
+  <path d="M969 205v230M854 320h230" stroke="#176b9f" stroke-width="2" opacity=".35"/>
+  <path d="m969 236 20 84-20 84-20-84 20-84Z" fill="#176b9f"/>
+  <circle cx="969" cy="320" r="10" fill="#bd6f2a"/>
+  <text x="88" y="565" fill="#61717e" font-family="Arial, sans-serif" font-size="18">Owner-reviewed editorial projection · not an automatic social feed</text>
+</svg>

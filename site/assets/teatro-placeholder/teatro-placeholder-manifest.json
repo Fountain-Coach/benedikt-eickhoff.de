@@ -1,0 +1,44 @@
+{
+  "entries" : [
+    {
+      "claimBoundary" : "Deterministic Teatro projection only; not live personal content or publication evidence.",
+      "filename" : "teatro-pointer-placeholder.svg",
+      "mode" : "memory-vector",
+      "renderDigest" : "19e5306890fc310e00bd2dfd820911fbf41347f43664d50fbfd3ac95881b0f3f",
+      "renderer" : "teatro-personal-pointer-placeholder.v1",
+      "sourceDocumentID" : "personal-pointer:placeholder:teatro-pointer-placeholder.svg",
+      "state" : "placeholder"
+    },
+    {
+      "claimBoundary" : "Deterministic Teatro projection only; not live personal content or publication evidence.",
+      "filename" : "teatro-memory-vector-placeholder.svg",
+      "mode" : "memory-vector",
+      "renderDigest" : "c8c2ba0fefba914f7d7ff907a783f07272fd67ffa78843b3d3f01ab3cfda5627",
+      "renderer" : "teatro-personal-pointer-placeholder.v1",
+      "sourceDocumentID" : "personal-pointer:placeholder:teatro-memory-vector-placeholder.svg",
+      "state" : "placeholder"
+    },
+    {
+      "claimBoundary" : "Deterministic Teatro projection only; not live personal content or publication evidence.",
+      "filename" : "teatro-score-placeholder.svg",
+      "mode" : "temporal-score",
+      "renderDigest" : "6f9f37781a8cded7b96594e485299fcda495f0426bcebb3b8cc0021235f43d58",
+      "renderer" : "teatro-personal-pointer-placeholder.v1",
+      "sourceDocumentID" : "personal-pointer:placeholder:teatro-score-placeholder.svg",
+      "state" : "placeholder"
+    },
+    {
+      "claimBoundary" : "Deterministic Teatro projection only; not live personal content or publication evidence.",
+      "filename" : "teatro-gallery-placeholder.svg",
+      "mode" : "relational-diagram",
+      "renderDigest" : "e1b5e98ab78b39d6c4635bc125f2bd71fc8461d0a7232776a71e3716c6542128",
+      "renderer" : "teatro-personal-pointer-placeholder.v1",
+      "sourceDocumentID" : "personal-pointer:placeholder:teatro-gallery-placeholder.svg",
+      "state" : "placeholder"
+    }
+  ],
+  "renderer" : "teatro-personal-pointer-placeholder.v1",
+  "schemaVersion" : "1.0",
+  "sourceInstrument" : "fountaincoach.semantic-scenographer@0.1.0",
+  "state" : "placeholder"
+}

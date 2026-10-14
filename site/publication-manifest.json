@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "host": "benedikt-eickhoff.de",
+  "pathPrefix": "/",
+  "publicationState": "local-review-candidate",
+  "role": "personal-pointer-and-public-idea-index",
+  "template": {
+    "name": "Personal pointer",
+    "revision": "personal-pointer-teatro-score-illustrations-v1",
+    "renderer": "fountaincoach.semantic-scenographer@0.1.0"
+  },
+  "assets": [
+    "/assets/pointer-mark.svg",
+    "/assets/fountain-coach-logo.png",
+    "/assets/pointer-social-card.svg",
+    "/assets/teatro-placeholder/teatro-pointer-placeholder.svg",
+    "/assets/teatro-placeholder/teatro-memory-vector-placeholder.svg",
+    "/assets/teatro-placeholder/teatro-score-placeholder.svg",
+    "/assets/teatro-placeholder/teatro-gallery-placeholder.svg",
+    "/assets/teatro-score-generated/pointer-field.png",
+    "/assets/teatro-score-generated/memory-threshold.png",
+    "/assets/teatro-score-generated/score-structure.png",
+    "/assets/teatro-score-generated/field-to-post.png",
+    "/assets/teatro-score-generated/memory-vector-meta.png",
+    "/assets/teatro-score-generated/teatro-score-meta.png",
+    "/assets/teatro-score-generated/memory-vector-meta-landscape.png",
+    "/assets/teatro-score-generated/teatro-score-meta-landscape.png"
+  ],
+  "claimBoundary": "Reviewed template and reference-directed Teatro Score illustrations only; no live personal content, private social access, image delivery, or public publication evidence."
+}

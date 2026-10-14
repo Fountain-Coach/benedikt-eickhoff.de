@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 88" role="img" aria-labelledby="title desc">
+  <title id="title">Personal pointer mark</title>
+  <desc id="desc">A small compass-like mark with two crossing pointers.</desc>
+  <rect width="88" height="88" rx="22" fill="#176b9f"/>
+  <circle cx="44" cy="44" r="25" fill="none" stroke="#e8f3f7" stroke-width="2" opacity=".8"/>
+  <path d="M44 17v54M17 44h54" stroke="#e8f3f7" stroke-width="2" opacity=".55"/>
+  <path d="m44 24 7 20-7 20-7-20 7-20Z" fill="#fff"/>
+  <circle cx="44" cy="44" r="4" fill="#bd6f2a"/>
+</svg>

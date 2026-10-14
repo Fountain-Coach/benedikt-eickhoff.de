@@ -1,0 +1,14 @@
+{
+  "schema": "fountain.estate.public-source.v1",
+  "host": "benedikt-eickhoff.de",
+  "canonical": "https://benedikt-eickhoff.de/",
+  "publicationRoot": "site/",
+  "repository": "Fountain-Coach/benedikt-eickhoff.de",
+  "capturedAt": "2026-10-14T10:29:25Z",
+  "publicationState": "verified-live-publication-baseline",
+  "fileCount": 31,
+  "indexPages": 6,
+  "sourceSha256Inventory": "3092aec05cc0017f43d63150e6f01420a49bdf21bef3e214f0eeb7ec718c4ce7",
+  "sourceNote": "Entire known local public site route inventory re-fetched via live HTTPS; initial Git revision is a snapshot, not an automated deployment.",
+  "deployControl": "EstatePublisher exact-host, authorized release and complete independent HTTPS readback"
+}

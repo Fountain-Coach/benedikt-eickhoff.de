@@ -1,0 +1,160 @@
+{
+  "host": "benedikt-eickhoff.de",
+  "files": [
+    {
+      "path": "assets/estate-core.css",
+      "sha256": "31baf2864046acf1885c49ccff40869d0dfbc9da63a2af674aecf218b8f8dbfe",
+      "bytes": 21237
+    },
+    {
+      "path": "assets/estate-core.js",
+      "sha256": "1c1a47002fa18c66c7ce328ac07db8457bf71aea2e5b878c8f7a3c80e53046a4",
+      "bytes": 7136
+    },
+    {
+      "path": "assets/fountain-coach-logo-transparent.png",
+      "sha256": "8c5fad1c3db56138d5959da75991dc8034a0be537ce46da6ffcc0d9655e7f729",
+      "bytes": 9842
+    },
+    {
+      "path": "assets/gallery.css",
+      "sha256": "d49e129bd801e8f15a1105fb5277779aa4200c09b9fad263e6d3acf2cc174164",
+      "bytes": 4125
+    },
+    {
+      "path": "assets/gallery.js",
+      "sha256": "a50b4d37f0089c169fe2d2ca6cbfa36b5c0ca06cabfd56f3a861185f772fc109",
+      "bytes": 1397
+    },
+    {
+      "path": "assets/pointer-mark.svg",
+      "sha256": "6e4ab33b6fae498faddfa8fa0376a8ea8ddd6f9681ed888bd9c83de57245afcc",
+      "bytes": 571
+    },
+    {
+      "path": "assets/pointer-social-card.svg",
+      "sha256": "9f3d0f1a9ea1f5c70d87ac52b8751b98d4f2db52db4aa32c041fed3d91cc2fc9",
+      "bytes": 2339
+    },
+    {
+      "path": "assets/pointer.css",
+      "sha256": "d708cd349a635a045a4ef72bd020378e45928cfecfd92e7631de01dae166854d",
+      "bytes": 17917
+    },
+    {
+      "path": "assets/pointer.js",
+      "sha256": "fc5a1d9c9942e9d6aba7ac907de7e7804049c2c50c747880d6230a58629f5c49",
+      "bytes": 570
+    },
+    {
+      "path": "assets/teatro-placeholder/teatro-gallery-placeholder.svg",
+      "sha256": "e1b5e98ab78b39d6c4635bc125f2bd71fc8461d0a7232776a71e3716c6542128",
+      "bytes": 4196
+    },
+    {
+      "path": "assets/teatro-placeholder/teatro-memory-vector-placeholder.svg",
+      "sha256": "c8c2ba0fefba914f7d7ff907a783f07272fd67ffa78843b3d3f01ab3cfda5627",
+      "bytes": 4267
+    },
+    {
+      "path": "assets/teatro-placeholder/teatro-placeholder-manifest.json",
+      "sha256": "12b6ddbdc6d20d8700d67dcebb726837c4f8a275c2bed5fad35e1e4fafad0ef9",
+      "bytes": 2159
+    },
+    {
+      "path": "assets/teatro-placeholder/teatro-pointer-placeholder.svg",
+      "sha256": "19e5306890fc310e00bd2dfd820911fbf41347f43664d50fbfd3ac95881b0f3f",
+      "bytes": 4214
+    },
+    {
+      "path": "assets/teatro-placeholder/teatro-score-placeholder.svg",
+      "sha256": "6f9f37781a8cded7b96594e485299fcda495f0426bcebb3b8cc0021235f43d58",
+      "bytes": 4075
+    },
+    {
+      "path": "assets/teatro-score-generated/field-to-post.png",
+      "sha256": "a4e5cf00fd07db37e50a27b19771ff9ec5901016c4546b6c2c39e34c30a6096a",
+      "bytes": 2234732
+    },
+    {
+      "path": "assets/teatro-score-generated/memory-threshold.png",
+      "sha256": "18499bb4313a8bca5039d5649ce5c12e4e0cbdc65fb8c6bdceecb71f0c606e1c",
+      "bytes": 2249217
+    },
+    {
+      "path": "assets/teatro-score-generated/memory-vector-meta-landscape.png",
+      "sha256": "66c9c2d4566afb739ab9484f303acc67052f4588ac349dba96ee50cb47eb645f",
+      "bytes": 2196145
+    },
+    {
+      "path": "assets/teatro-score-generated/memory-vector-meta.png",
+      "sha256": "90d9465bf7646f4bb8a30d391cc72e0715a189a4da528d7907571ea85c092174",
+      "bytes": 2474596
+    },
+    {
+      "path": "assets/teatro-score-generated/pointer-field.png",
+      "sha256": "6a0ce13c99797057520caa938a50cd09dc2492d7c4e1f610296c7e34931f23ae",
+      "bytes": 2378597
+    },
+    {
+      "path": "assets/teatro-score-generated/score-structure.png",
+      "sha256": "fe6d4f4b1ffeb07277921df08aae8e812b2f821efa424e0e2a44e6342172582a",
+      "bytes": 2124241
+    },
+    {
+      "path": "assets/teatro-score-generated/teatro-score-meta-landscape.png",
+      "sha256": "80b9caed35c5169a5ba13657da9eb7ec1bdee7db70f550b67cbf76d8be0697bb",
+      "bytes": 2444709
+    },
+    {
+      "path": "assets/teatro-score-generated/teatro-score-meta.png",
+      "sha256": "8cf3c20976d6cfee06ba5bb6c48c565b7951d6790d0f710f6d1051f69dd26a9f",
+      "bytes": 2473189
+    },
+    {
+      "path": "index.html",
+      "sha256": "a0a87ec2a26728b7a946716d4687d02e59eb7b9121d11ada09749d00ee25a381",
+      "bytes": 23702
+    },
+    {
+      "path": "posts/a-day-becomes-a-readable-scene/a-day-becomes-a-readable-scene.fountain",
+      "sha256": "d9439a8460978e757201e8bfde602dae8daa89a573a4f97b0f1912fce906e725",
+      "bytes": 1123
+    },
+    {
+      "path": "posts/a-day-becomes-a-readable-scene/content.html",
+      "sha256": "be7c3708b067ab07ad3125ff0ac4e637c0838c8f946f1e5a88efa11142fba852",
+      "bytes": 1909
+    },
+    {
+      "path": "posts/a-pointer-enters-the-scene/index.html",
+      "sha256": "240b6c3f931da2636f74c405e576d147073ab446ca1ee47d5eb48a991358f14d",
+      "bytes": 8934
+    },
+    {
+      "path": "posts/chapter-129-the-image-becomes-a-contract/index.html",
+      "sha256": "eefb794659874e1859b311b5e10b2177163ea4b2c6e440ede2750802a882dacd",
+      "bytes": 8713
+    },
+    {
+      "path": "posts/memory-vector/index.html",
+      "sha256": "99ab0bcdf9301af64459e58d1bc9c38ff9a4150139a68c12664cde54abc419c1",
+      "bytes": 8874
+    },
+    {
+      "path": "posts/teatro-score/index.html",
+      "sha256": "d4ba8578193445143b72ad037bfc7e268a7ef7b6ec1c57f5e83eaf6a0c7c55d6",
+      "bytes": 8878
+    },
+    {
+      "path": "posts/the-gallery-becomes-a-post/index.html",
+      "sha256": "38fde3d4b92955d7fb3cbe66a5dc8ac50d59de7462f359718c1c9588064508e6",
+      "bytes": 8982
+    },
+    {
+      "path": "publication-manifest.json",
+      "sha256": "20b2380f3d0125edde5af2240ced5dc187d029129be0a52c799427842196e543",
+      "bytes": 1435
+    }
+  ]
+}
