@@ -8,7 +8,7 @@
 
 ## Intent
 
-* A Life in the Making* is a daily, evidence-grounded series on the author's creative and professional continuity: Fountain Coach, Reframe, theatre, literature, music, composition and meaningful work. Private dated originals and source ledgers belong to `Contexter/dailies`, not this website's deployment tree.
+*A Life in the Making* is a daily, evidence-grounded series on the author's creative and professional continuity: Fountain Coach, Reframe, theatre, literature, music, composition and meaningful work. Private dated originals and source ledgers belong to `Contexter/dailies`, not this website's deployment tree.
 
 The personal pointer may **later** present an author-selected public edition, perhaps at `/dailies/` or in an integrated section. **Neither the route nor its design nor any published entry is approved by this document.**
 
@@ -31,4 +31,4 @@ The personal pointer may **later** present an author-selected public edition, pe
 
 ## Recorded non-actions
 
-On 22 October 2026, this document records **intent only**. No DNS, Caddy, production website, store contents or public route is changed. No automation or GitHub CI is installed.
+On 22 October 2026, this document records **intent only**. No DNS, Caddy, production website, store contents or public route is changed. No deployment automation or GitHub CI is installed.
