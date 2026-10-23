@@ -1,0 +1,48 @@
+{
+  "receiptType": "memory-vector-publisher.synthetic-contract-verification.v1",
+  "date": "2026-10-23",
+  "scope": "public documentation candidate only; synthetic data and local validator",
+  "repository": "Fountain-Coach/benedikt-eickhoff.de",
+  "branch": "proposal/memory-vector-publisher-v1-20261023",
+  "validator": {
+    "name": "Ajv",
+    "version": "8.20.0",
+    "formatRules": "ajv-formats 3.0.1",
+    "node": "23.5.0",
+    "standard": "JSON Schema 2020-12"
+  },
+  "artifacts": [
+    {
+      "path": "docs/contracts/memory-vector-publisher-v1.schema.json",
+      "sha256": "f6c386977f8ce126c01da671ca4499db79ba361d3209343501fadec464f50249"
+    },
+    {
+      "path": "docs/contracts/fixtures/memory-vector-publisher-v1.synthetic.json",
+      "sha256": "b3ef11ee40283c49b28212d7ef4ea151c7d6ea66757f06ad8cbfa4d3f57d4bcb"
+    },
+    {
+      "path": "docs/contracts/verify-memory-vector-publisher-v1.cjs",
+      "sha256": "ae3c36336219d717218971ea057c181d94570bb15a3d03753fa5132340df8cf2"
+    }
+  ],
+  "checks": {
+    "validRecordFixtures": 7,
+    "validRecordFixturesPassed": 7,
+    "negativeCases": 12,
+    "negativeCasesRejected": 12,
+    "crossDocumentSourceAndPublicationInvariants": "passed"
+  },
+  "sourceArchiveTouched": false,
+  "modelEgressOccurred": false,
+  "stagingChanged": false,
+  "publicProductionChanged": false,
+  "notAccepted": [
+    "native Reframe integration",
+    "actual source admission",
+    "Mac/iPad visual Field",
+    "real artistic acceptance",
+    "production publishing",
+    "original Koken/Strato photo recovery"
+  ],
+  "note": "Synthetic fixture digests and publication admissions are fictional examples, not real archival or publication receipts. This is not a substitute for later FCIS runtime or public readback evidence."
+}
