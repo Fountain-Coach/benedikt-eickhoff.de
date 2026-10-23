@@ -613,7 +613,36 @@
         "sourceIndexDigest",
         "claims"
       ],
-      "additionalProperties": false
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "claims": {
+                "contains": {
+                  "type": "object",
+                  "properties": {
+                    "attributedTo": {
+                      "const": "model"
+                    }
+                  },
+                  "required": [
+                    "attributedTo"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "claims"
+            ]
+          },
+          "then": {
+            "required": [
+              "modelInvocation"
+            ]
+          }
+        }
+      ]
     },
     "Field": {
       "type": "object",
