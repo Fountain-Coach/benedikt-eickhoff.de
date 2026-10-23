@@ -1,0 +1,259 @@
+{
+  "description": "Synthetic contract fixture only. Digests are placeholders, approvals are fictional, example.invalid is not a real website. No source bytes or public release evidence.",
+  "records": [
+    {
+      "kind": "DailySourceBundle",
+      "version": 1,
+      "documentId": "synthetic:bundle:1",
+      "revision": 1,
+      "createdAt": "2026-10-23T10:00:00+02:00",
+      "date": "2026-10-23",
+      "timezone": "Europe/Berlin",
+      "sourceIndexDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "entries": [
+        {
+          "entryId": "synthetic:post-a:image-0",
+          "sourceSystem": "synthetic-facebook-export",
+          "sourceRecordId": "synthetic:post-a",
+          "mediaOrdinal": 0,
+          "mediaKind": "image",
+          "availability": "verified",
+          "rightsState": "private",
+          "sourceDigest": "1111111111111111111111111111111111111111111111111111111111111111",
+          "byteLength": 1234
+        },
+        {
+          "entryId": "synthetic:post-a:image-1",
+          "sourceSystem": "synthetic-facebook-export",
+          "sourceRecordId": "synthetic:post-a",
+          "mediaOrdinal": 1,
+          "mediaKind": "image",
+          "availability": "verified",
+          "rightsState": "private",
+          "sourceDigest": "2222222222222222222222222222222222222222222222222222222222222222",
+          "byteLength": 2345
+        },
+        {
+          "entryId": "synthetic:post-b:video-0",
+          "sourceSystem": "synthetic-facebook-export",
+          "sourceRecordId": "synthetic:post-b",
+          "mediaOrdinal": 0,
+          "mediaKind": "video",
+          "availability": "verified",
+          "rightsState": "private",
+          "sourceDigest": "3333333333333333333333333333333333333333333333333333333333333333",
+          "byteLength": 9876
+        },
+        {
+          "entryId": "synthetic:post-c:text",
+          "sourceSystem": "synthetic-facebook-export",
+          "sourceRecordId": "synthetic:post-c",
+          "mediaKind": "text",
+          "availability": "verified",
+          "rightsState": "private",
+          "sourceDigest": "4444444444444444444444444444444444444444444444444444444444444444",
+          "byteLength": 189
+        },
+        {
+          "entryId": "synthetic:score-unrelated",
+          "sourceSystem": "synthetic-author-score",
+          "sourceRecordId": "synthetic:score-a",
+          "mediaKind": "image",
+          "availability": "verified",
+          "rightsState": "private",
+          "sourceDigest": "5555555555555555555555555555555555555555555555555555555555555555",
+          "byteLength": 3000
+        },
+        {
+          "entryId": "synthetic:koken:asset-1",
+          "sourceSystem": "synthetic-koken",
+          "sourceRecordId": "synthetic:koken:source-1",
+          "mediaKind": "image",
+          "availability": "verified",
+          "rightsState": "private",
+          "sourceDigest": "6666666666666666666666666666666666666666666666666666666666666666",
+          "byteLength": 3000,
+          "historical": {
+            "system": "koken",
+            "albumId": "synthetic:koken:album-1",
+            "albumPosition": 1,
+            "publicationState": "public"
+          }
+        },
+        {
+          "entryId": "synthetic:koken:asset-2",
+          "sourceSystem": "synthetic-koken",
+          "sourceRecordId": "synthetic:koken:source-2",
+          "mediaKind": "image",
+          "availability": "missing",
+          "rightsState": "unknown",
+          "historical": {
+            "system": "koken",
+            "albumId": "synthetic:koken:album-1",
+            "albumPosition": 2,
+            "publicationState": "unknown"
+          }
+        }
+      ],
+      "relations": []
+    },
+    {
+      "kind": "CreativeSourceSelection",
+      "version": 1,
+      "documentId": "synthetic:source-selection:1",
+      "revision": 1,
+      "createdAt": "2026-10-23T10:00:00+02:00",
+      "bundleId": "synthetic:bundle:1",
+      "sourceIndexDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "selectedSourceAnchors": [
+        {
+          "entryId": "synthetic:post-a:image-1",
+          "sourceDigest": "2222222222222222222222222222222222222222222222222222222222222222",
+          "mediaOrdinal": 1
+        },
+        {
+          "entryId": "synthetic:post-b:video-0",
+          "sourceDigest": "3333333333333333333333333333333333333333333333333333333333333333",
+          "mediaOrdinal": 0
+        },
+        {
+          "entryId": "synthetic:post-c:text",
+          "sourceDigest": "4444444444444444444444444444444444444444444444444444444444444444",
+          "textStart": 0,
+          "textEnd": 25
+        }
+      ],
+      "declaredRelationIds": [],
+      "authorDecisionId": "synthetic:author-curation:1"
+    },
+    {
+      "kind": "MemoryVector",
+      "version": 1,
+      "documentId": "synthetic:vector:1",
+      "revision": 1,
+      "createdAt": "2026-10-23T10:00:00+02:00",
+      "bundleId": "synthetic:bundle:1",
+      "selectionId": "synthetic:source-selection:1",
+      "sourceIndexDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "claims": [
+        {
+          "claimId": "synthetic:claim:obs",
+          "lane": "observed",
+          "text": "The selected source set contains two media entries and a text excerpt.",
+          "sourceAnchors": [
+            {
+              "entryId": "synthetic:post-a:image-1",
+              "sourceDigest": "2222222222222222222222222222222222222222222222222222222222222222"
+            },
+            {
+              "entryId": "synthetic:post-b:video-0",
+              "sourceDigest": "3333333333333333333333333333333333333333333333333333333333333333"
+            }
+          ],
+          "uncertainty": "Catalog-level observation only; no claim about visual content.",
+          "attributedTo": "author"
+        },
+        {
+          "claimId": "synthetic:claim:interpretation",
+          "lane": "interpreted",
+          "text": "The writer may explore a motif of interruption.",
+          "counterreading": "The selected works may have no intentional motif in common.",
+          "sourceAnchors": [
+            {
+              "entryId": "synthetic:post-a:image-1",
+              "sourceDigest": "2222222222222222222222222222222222222222222222222222222222222222"
+            }
+          ],
+          "uncertainty": "Tentative artistic reading, not provenance.",
+          "attributedTo": "author"
+        },
+        {
+          "claimId": "synthetic:claim:invention",
+          "lane": "invented",
+          "text": "A fictional scene could place two objects in dialogue.",
+          "sourceAnchors": [
+            {
+              "entryId": "synthetic:post-a:image-1",
+              "sourceDigest": "2222222222222222222222222222222222222222222222222222222222222222"
+            }
+          ],
+          "uncertainty": "Entirely new invention; not a historical event.",
+          "attributedTo": "author"
+        }
+      ]
+    },
+    {
+      "kind": "Field",
+      "version": 1,
+      "documentId": "synthetic:field:1",
+      "revision": 1,
+      "createdAt": "2026-10-23T10:00:00+02:00",
+      "bundleId": "synthetic:bundle:1",
+      "selectionId": "synthetic:source-selection:1",
+      "vectorId": "synthetic:vector:1",
+      "scope": "private-author-review",
+      "sourceEntryIds": [
+        "synthetic:post-a:image-1",
+        "synthetic:post-b:video-0",
+        "synthetic:koken:asset-2"
+      ],
+      "visibleMissingSourceIds": [
+        "synthetic:koken:asset-2"
+      ],
+      "copyLinkControlsRequired": true
+    },
+    {
+      "kind": "EditorialSelection",
+      "version": 1,
+      "documentId": "synthetic:editorial-selection:1",
+      "revision": 1,
+      "createdAt": "2026-10-23T10:00:00+02:00",
+      "fieldId": "synthetic:field:1",
+      "destinationIntent": "gallery",
+      "orderedItems": [
+        {
+          "sourceEntryId": "synthetic:post-b:video-0"
+        },
+        {
+          "sourceEntryId": "synthetic:post-a:image-1"
+        }
+      ],
+      "authorDecisionId": "synthetic:author-selection:1",
+      "reviewState": "ready-for-preflight"
+    },
+    {
+      "kind": "PublicationAdmission",
+      "version": 1,
+      "documentId": "synthetic:publication-admission:1",
+      "revision": 1,
+      "createdAt": "2026-10-23T10:00:00+02:00",
+      "selectionId": "synthetic:editorial-selection:1",
+      "selectionDigest": "7777777777777777777777777777777777777777777777777777777777777777",
+      "candidateArtifactDigest": "8888888888888888888888888888888888888888888888888888888888888888",
+      "destinationHost": "example.invalid",
+      "canonicalPath": "/synthetic/gallery/",
+      "status": "approved",
+      "rightsDecision": "admitted",
+      "consentDecision": "admitted",
+      "disclosureDecision": "accepted",
+      "altAndCreditDecision": "accepted",
+      "authorDecisionId": "synthetic:approval-only-in-test:1",
+      "authorDecisionTime": "2026-10-23T10:08:00+02:00"
+    },
+    {
+      "kind": "Edition",
+      "version": 1,
+      "documentId": "synthetic:edition:1",
+      "revision": 1,
+      "createdAt": "2026-10-23T10:00:00+02:00",
+      "selectionId": "synthetic:editorial-selection:1",
+      "admissionId": "synthetic:publication-admission:1",
+      "sourceRevisionDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "artifactDigest": "8888888888888888888888888888888888888888888888888888888888888888",
+      "destinationHost": "example.invalid",
+      "canonicalPath": "/synthetic/gallery/",
+      "rendererVersion": "synthetic:renderer:1",
+      "releaseState": "candidate"
+    }
+  ]
+}
