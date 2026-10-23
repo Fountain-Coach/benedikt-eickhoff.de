@@ -1,0 +1,1050 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:fountain-coach:memory-vector-publisher:1",
+  "title": "Memory Vector Publisher candidate record contracts (not a source-of-truth replacement)",
+  "description": "Public, sanitized shape definitions only. Does not admit private data, model egress, or publication.",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/DailySourceBundle"
+    },
+    {
+      "$ref": "#/$defs/CreativeSourceSelection"
+    },
+    {
+      "$ref": "#/$defs/MemoryVector"
+    },
+    {
+      "$ref": "#/$defs/Field"
+    },
+    {
+      "$ref": "#/$defs/EditorialSelection"
+    },
+    {
+      "$ref": "#/$defs/PublicationAdmission"
+    },
+    {
+      "$ref": "#/$defs/Edition"
+    }
+  ],
+  "$defs": {
+    "digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$",
+      "description": "Lowercase SHA-256 of the actual verified bytes."
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256,
+      "pattern": "^[^\\s]+$"
+    },
+    "sourceAnchor": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "entryId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^[^\\s]+$"
+        },
+        "sourceDigest": {
+          "$ref": "#/$defs/digest"
+        },
+        "mediaOrdinal": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "textStart": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "textEnd": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "crop": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "x": {
+              "type": "number",
+              "minimum": 0
+            },
+            "y": {
+              "type": "number",
+              "minimum": 0
+            },
+            "width": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "height": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "coordinateSystem": {
+              "enum": [
+                "normalized",
+                "pixels"
+              ]
+            }
+          },
+          "required": [
+            "x",
+            "y",
+            "width",
+            "height",
+            "coordinateSystem"
+          ]
+        }
+      },
+      "required": [
+        "entryId"
+      ]
+    },
+    "sourceEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "entryId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^[^\\s]+$"
+        },
+        "sourceSystem": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sourceRecordId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^[^\\s]+$"
+        },
+        "sourceTimestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "mediaOrdinal": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "mediaKind": {
+          "enum": [
+            "image",
+            "video",
+            "audio",
+            "text",
+            "mixed",
+            "other"
+          ]
+        },
+        "availability": {
+          "enum": [
+            "verified",
+            "reference-only",
+            "missing"
+          ]
+        },
+        "rightsState": {
+          "enum": [
+            "unknown",
+            "private",
+            "review-required",
+            "admitted"
+          ]
+        },
+        "sourceDigest": {
+          "$ref": "#/$defs/digest"
+        },
+        "byteLength": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "provenanceWitnessIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256,
+            "pattern": "^[^\\s]+$"
+          },
+          "uniqueItems": true
+        },
+        "historical": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "system": {
+              "enum": [
+                "koken",
+                "slideshowpro",
+                "other"
+              ]
+            },
+            "albumId": {
+              "type": "string"
+            },
+            "albumPosition": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "publicationState": {
+              "enum": [
+                "public",
+                "unlisted",
+                "draft",
+                "unknown"
+              ]
+            }
+          },
+          "required": [
+            "system"
+          ]
+        }
+      },
+      "required": [
+        "entryId",
+        "sourceSystem",
+        "sourceRecordId",
+        "mediaKind",
+        "availability",
+        "rightsState"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "availability": {
+                "const": "verified"
+              }
+            },
+            "required": [
+              "availability"
+            ]
+          },
+          "then": {
+            "required": [
+              "sourceDigest",
+              "byteLength"
+            ]
+          }
+        }
+      ]
+    },
+    "relation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "relationId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^[^\\s]+$"
+        },
+        "relationType": {
+          "enum": [
+            "historical-join",
+            "co-post",
+            "author-declared"
+          ]
+        },
+        "fromEntryId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^[^\\s]+$"
+        },
+        "toEntryId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^[^\\s]+$"
+        },
+        "evidenceIds": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256,
+            "pattern": "^[^\\s]+$"
+          },
+          "uniqueItems": true
+        },
+        "authorDecisionId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^[^\\s]+$"
+        }
+      },
+      "required": [
+        "relationId",
+        "relationType",
+        "fromEntryId",
+        "toEntryId",
+        "evidenceIds"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "relationType": {
+                "const": "author-declared"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "authorDecisionId"
+            ]
+          }
+        }
+      ]
+    },
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "claimId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^[^\\s]+$"
+        },
+        "lane": {
+          "enum": [
+            "observed",
+            "interpreted",
+            "invented"
+          ]
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sourceAnchors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/sourceAnchor"
+          },
+          "minItems": 1
+        },
+        "uncertainty": {
+          "type": "string",
+          "minLength": 1
+        },
+        "counterreading": {
+          "type": "string",
+          "minLength": 1
+        },
+        "attributedTo": {
+          "enum": [
+            "author",
+            "model",
+            "measurement"
+          ]
+        },
+        "method": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "claimId",
+        "lane",
+        "text",
+        "sourceAnchors",
+        "uncertainty",
+        "attributedTo"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "lane": {
+                "const": "interpreted"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "counterreading"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "attributedTo": {
+                "const": "measurement"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "method"
+            ]
+          }
+        }
+      ]
+    },
+    "DailySourceBundle": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "DailySourceBundle"
+        },
+        "version": {
+          "const": 1
+        },
+        "documentId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^[^\\s]+$"
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "timezone": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sourceIndexDigest": {
+          "$ref": "#/$defs/digest"
+        },
+        "entries": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/sourceEntry"
+          }
+        },
+        "relations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/relation"
+          }
+        }
+      },
+      "required": [
+        "kind",
+        "version",
+        "documentId",
+        "revision",
+        "createdAt",
+        "date",
+        "timezone",
+        "sourceIndexDigest",
+        "entries",
+        "relations"
+      ],
+      "additionalProperties": false
+    },
+    "CreativeSourceSelection": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "CreativeSourceSelection"
+        },
+        "version": {
+          "const": 1
+        },
+        "documentId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^[^\\s]+$"
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "bundleId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^[^\\s]+$"
+        },
+        "sourceIndexDigest": {
+          "$ref": "#/$defs/digest"
+        },
+        "selectedSourceAnchors": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/sourceAnchor"
+          }
+        },
+        "declaredRelationIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256,
+            "pattern": "^[^\\s]+$"
+          },
+          "uniqueItems": true
+        },
+        "authorDecisionId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^[^\\s]+$"
+        }
+      },
+      "required": [
+        "kind",
+        "version",
+        "documentId",
+        "revision",
+        "createdAt",
+        "bundleId",
+        "sourceIndexDigest",
+        "selectedSourceAnchors",
+        "declaredRelationIds",
+        "authorDecisionId"
+      ],
+      "additionalProperties": false
+    },
+    "MemoryVector": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "MemoryVector"
+        },
+        "version": {
+          "const": 1
+        },
+        "documentId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^[^\\s]+$"
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "bundleId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^[^\\s]+$"
+        },
+        "selectionId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^[^\\s]+$"
+        },
+        "sourceIndexDigest": {
+          "$ref": "#/$defs/digest"
+        },
+        "claims": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/claim"
+          }
+        },
+        "modelInvocation": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "providerId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256,
+              "pattern": "^[^\\s]+$"
+            },
+            "modelId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256,
+              "pattern": "^[^\\s]+$"
+            },
+            "grantReceiptId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256,
+              "pattern": "^[^\\s]+$"
+            },
+            "outboundPayloadDigest": {
+              "$ref": "#/$defs/digest"
+            }
+          },
+          "required": [
+            "providerId",
+            "modelId",
+            "grantReceiptId",
+            "outboundPayloadDigest"
+          ]
+        }
+      },
+      "required": [
+        "kind",
+        "version",
+        "documentId",
+        "revision",
+        "createdAt",
+        "bundleId",
+        "selectionId",
+        "sourceIndexDigest",
+        "claims"
+      ],
+      "additionalProperties": false
+    },
+    "Field": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "Field"
+        },
+        "version": {
+          "const": 1
+        },
+        "documentId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^[^\\s]+$"
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "bundleId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^[^\\s]+$"
+        },
+        "selectionId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^[^\\s]+$"
+        },
+        "vectorId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^[^\\s]+$"
+        },
+        "scope": {
+          "const": "private-author-review"
+        },
+        "sourceEntryIds": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256,
+            "pattern": "^[^\\s]+$"
+          },
+          "uniqueItems": true
+        },
+        "visibleMissingSourceIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256,
+            "pattern": "^[^\\s]+$"
+          },
+          "uniqueItems": true
+        },
+        "copyLinkControlsRequired": {
+          "const": true
+        }
+      },
+      "required": [
+        "kind",
+        "version",
+        "documentId",
+        "revision",
+        "createdAt",
+        "bundleId",
+        "selectionId",
+        "scope",
+        "sourceEntryIds",
+        "visibleMissingSourceIds",
+        "copyLinkControlsRequired"
+      ],
+      "additionalProperties": false
+    },
+    "EditorialSelection": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "EditorialSelection"
+        },
+        "version": {
+          "const": 1
+        },
+        "documentId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^[^\\s]+$"
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "fieldId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^[^\\s]+$"
+        },
+        "destinationIntent": {
+          "enum": [
+            "gallery",
+            "teatro",
+            "reading",
+            "satzfunk"
+          ]
+        },
+        "orderedItems": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "sourceEntryId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 256,
+                "pattern": "^[^\\s]+$"
+              },
+              "vectorClaimId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 256,
+                "pattern": "^[^\\s]+$"
+              }
+            },
+            "anyOf": [
+              {
+                "required": [
+                  "sourceEntryId"
+                ]
+              },
+              {
+                "required": [
+                  "vectorClaimId"
+                ]
+              }
+            ]
+          }
+        },
+        "authorDecisionId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^[^\\s]+$"
+        },
+        "reviewState": {
+          "enum": [
+            "candidate",
+            "rejected",
+            "ready-for-preflight"
+          ]
+        }
+      },
+      "required": [
+        "kind",
+        "version",
+        "documentId",
+        "revision",
+        "createdAt",
+        "fieldId",
+        "destinationIntent",
+        "orderedItems",
+        "authorDecisionId",
+        "reviewState"
+      ],
+      "additionalProperties": false
+    },
+    "PublicationAdmission": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "PublicationAdmission"
+        },
+        "version": {
+          "const": 1
+        },
+        "documentId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^[^\\s]+$"
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "selectionId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^[^\\s]+$"
+        },
+        "selectionDigest": {
+          "$ref": "#/$defs/digest"
+        },
+        "candidateArtifactDigest": {
+          "$ref": "#/$defs/digest"
+        },
+        "destinationHost": {
+          "type": "string",
+          "minLength": 1
+        },
+        "canonicalPath": {
+          "type": "string",
+          "pattern": "^/"
+        },
+        "status": {
+          "enum": [
+            "approved",
+            "refused"
+          ]
+        },
+        "rightsDecision": {
+          "enum": [
+            "admitted",
+            "review-needed",
+            "prohibited"
+          ]
+        },
+        "consentDecision": {
+          "enum": [
+            "admitted",
+            "review-needed",
+            "prohibited"
+          ]
+        },
+        "disclosureDecision": {
+          "enum": [
+            "accepted",
+            "review-needed"
+          ]
+        },
+        "altAndCreditDecision": {
+          "enum": [
+            "accepted",
+            "review-needed"
+          ]
+        },
+        "authorDecisionId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^[^\\s]+$"
+        },
+        "authorDecisionTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "refusalReasons": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "kind",
+        "version",
+        "documentId",
+        "revision",
+        "createdAt",
+        "selectionId",
+        "selectionDigest",
+        "candidateArtifactDigest",
+        "destinationHost",
+        "canonicalPath",
+        "status",
+        "rightsDecision",
+        "consentDecision",
+        "disclosureDecision",
+        "altAndCreditDecision",
+        "authorDecisionId",
+        "authorDecisionTime"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "approved"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "rightsDecision": {
+                "const": "admitted"
+              },
+              "consentDecision": {
+                "const": "admitted"
+              },
+              "disclosureDecision": {
+                "const": "accepted"
+              },
+              "altAndCreditDecision": {
+                "const": "accepted"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Edition": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "Edition"
+        },
+        "version": {
+          "const": 1
+        },
+        "documentId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^[^\\s]+$"
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "selectionId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^[^\\s]+$"
+        },
+        "admissionId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^[^\\s]+$"
+        },
+        "sourceRevisionDigest": {
+          "$ref": "#/$defs/digest"
+        },
+        "artifactDigest": {
+          "$ref": "#/$defs/digest"
+        },
+        "destinationHost": {
+          "type": "string",
+          "minLength": 1
+        },
+        "canonicalPath": {
+          "type": "string",
+          "pattern": "^/"
+        },
+        "rendererVersion": {
+          "type": "string",
+          "minLength": 1
+        },
+        "releaseState": {
+          "enum": [
+            "candidate",
+            "staged",
+            "released"
+          ]
+        },
+        "releaseReceiptId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^[^\\s]+$"
+        },
+        "independentReadbackReceiptId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^[^\\s]+$"
+        }
+      },
+      "required": [
+        "kind",
+        "version",
+        "documentId",
+        "revision",
+        "createdAt",
+        "selectionId",
+        "admissionId",
+        "sourceRevisionDigest",
+        "artifactDigest",
+        "destinationHost",
+        "canonicalPath",
+        "rendererVersion",
+        "releaseState"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "releaseState": {
+                "const": "released"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "releaseReceiptId",
+              "independentReadbackReceiptId"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
