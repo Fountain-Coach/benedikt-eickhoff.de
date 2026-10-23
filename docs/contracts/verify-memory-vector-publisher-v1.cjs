@@ -24,6 +24,7 @@ reject("unexpected private path forbidden","DailySourceBundle",r=>{r.entries[0].
 reject("author relation requires author decision","DailySourceBundle",r=>{r.relations.push({relationId:"synthetic:bad",relationType:"author-declared",fromEntryId:r.entries[0].entryId,toEntryId:r.entries[1].entryId,evidenceIds:["synthetic:evidence"]})});
 reject("invalid calendar date","DailySourceBundle",r=>{r.date="2026-19-99"});
 reject("interpretation requires counterreading","MemoryVector",r=>{delete r.claims[1].counterreading});
+reject("model-authored claim without model operation is rejected","MemoryVector",r=>{r.claims[0].attributedTo="model"});
 reject("model invocation requires grant receipt","MemoryVector",r=>{r.modelInvocation={providerId:"synthetic:provider",modelId:"synthetic:model",outboundPayloadDigest:"a".repeat(64)}});
 reject("private field cannot become public silently","Field",r=>{r.scope="public-preview"});
 reject("selection destination must be named","EditorialSelection",r=>{r.destinationIntent="any"});
@@ -69,4 +70,4 @@ assert.equal(admission.status,"approved");
 assert.equal(edition.releaseState,"candidate");
 console.log("ACCEPT",positives,"typed synthetic records");
 console.log("INVARIANTS source selection, vector, field, admission and edition consistent");
-console.log("RESULT",positives,"positive records,",11,"negative schema gates, cross-document assertions PASS");
+console.log("RESULT",positives,"positive records,",12,"negative schema gates, cross-document assertions PASS");
