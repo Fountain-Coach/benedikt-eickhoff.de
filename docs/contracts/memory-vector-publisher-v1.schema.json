@@ -629,12 +629,14 @@
                   "required": [
                     "attributedTo"
                   ]
-                }
+                },
+                "type": "array"
               }
             },
             "required": [
               "claims"
-            ]
+            ],
+            "type": "object"
           },
           "then": {
             "required": [
