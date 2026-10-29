@@ -1,5 +1,9 @@
 # benedikt-eickhoff.de - owning Git source
 
+## New author decision — same Reframe Reader source at both hostnames (29 October 2026)
+
+**`benedikt-eickhoff.de` and `fountain.coach` are two names for the very same Reframe Reader/Bookshelf publication**, with one intended public source tree in `Fountain-Coach/fountain.coach`. Author/About, attributed original works and Fountain Coach publisher identity are within that same reader. This repository remains the historical/current source for the original personal site until route-by-route source and release reconciliation; it is **not** the future owner of a second About site or duplicate Reader catalogue. Existing personal site, original source, direct URLs and email/DNS records stay protected until separately authorized public routing and release. Current site/live status documented below is historical/current state, **not** proof the two names already serve identical content. See current agent instructions and Reframe ADR-008.
+
 GitHub source authority for benedikt-eickhoff.de and its site/ publishing tree.
 Role: Author pointer and personal publication, retained as adjacent editorial identity
 
